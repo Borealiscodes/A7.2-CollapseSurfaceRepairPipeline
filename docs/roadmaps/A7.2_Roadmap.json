@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "altitude": "A7.2",
+  "title": "Collapse-Surface Repair Pipeline Roadmap",
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Scaffolding & Interfaces",
+      "description": "Define repo structure, altitude boundaries, and JSON interfaces.",
+      "deliverables": [
+        "Directory scaffolding",
+        "Interface schemas",
+        "Altitude-safe API surfaces"
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Toolchain Implementation",
+      "description": "Build the four-layer system-agnostic repair pipeline.",
+      "deliverables": [
+        "Python collapse-surface detector",
+        "Rust non-dual projection engine",
+        "JSON/Protobuf serializer",
+        "Lean dual-compatible lift engine"
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Runtime Integration",
+      "description": "Connect toolchain layers into a coherent execution pipeline.",
+      "deliverables": [
+        "Detector → Projection integration",
+        "Projection → Serializer integration",
+        "Serializer → Lift integration",
+        "Lift → A6 runtime reintegration"
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Testing & Validation",
+      "description": "Ensure drift-neutrality, spectral closure, and altitude discipline.",
+      "deliverables": [
+        "Drift-neutrality tests",
+        "Spectral tear closure tests",
+        "Modal adjacency restoration tests",
+        "Lean reintegration invariants",
+        "Altitude discipline tests"
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Release",
+      "description": "Finalize and publish the A7.2 repair pipeline.",
+      "deliverables": [
+        "Tag release A7.2-RepairPipeline-v1.0",
+        "Publish documentation",
+        "Archive artifacts"
+      ]
+    }
+  ]
+}
