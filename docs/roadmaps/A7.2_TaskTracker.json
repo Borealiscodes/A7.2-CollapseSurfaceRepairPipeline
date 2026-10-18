@@ -1,0 +1,118 @@
+{
+  "tasks": [
+    {
+      "id": "T001",
+      "title": "Create directory scaffolding",
+      "phase": "phase_1",
+      "status": "pending"
+    },
+    {
+      "id": "T002",
+      "title": "Define interface JSON schemas",
+      "phase": "phase_1",
+      "status": "pending"
+    },
+    {
+      "id": "T003",
+      "title": "Define altitude-safe API surfaces",
+      "phase": "phase_1",
+      "status": "pending"
+    },
+    {
+      "id": "T004",
+      "title": "Implement Python collapse-surface detector",
+      "phase": "phase_2",
+      "status": "pending"
+    },
+    {
+      "id": "T005",
+      "title": "Implement Rust non-dual projection engine",
+      "phase": "phase_2",
+      "status": "pending"
+    },
+    {
+      "id": "T006",
+      "title": "Implement JSON/Protobuf serializer",
+      "phase": "phase_2",
+      "status": "pending"
+    },
+    {
+      "id": "T007",
+      "title": "Implement Lean dual-compatible lift engine",
+      "phase": "phase_2",
+      "status": "pending"
+    },
+    {
+      "id": "T008",
+      "title": "Integrate detector → projection",
+      "phase": "phase_3",
+      "status": "pending"
+    },
+    {
+      "id": "T009",
+      "title": "Integrate projection → serializer",
+      "phase": "phase_3",
+      "status": "pending"
+    },
+    {
+      "id": "T010",
+      "title": "Integrate serializer → lift",
+      "phase": "phase_3",
+      "status": "pending"
+    },
+    {
+      "id": "T011",
+      "title": "Integrate lift → A6 runtime",
+      "phase": "phase_3",
+      "status": "pending"
+    },
+    {
+      "id": "T012",
+      "title": "Run drift-neutrality tests",
+      "phase": "phase_4",
+      "status": "pending"
+    },
+    {
+      "id": "T013",
+      "title": "Run spectral tear closure tests",
+      "phase": "phase_4",
+      "status": "pending"
+    },
+    {
+      "id": "T014",
+      "title": "Run modal adjacency restoration tests",
+      "phase": "phase_4",
+      "status": "pending"
+    },
+    {
+      "id": "T015",
+      "title": "Run Lean reintegration invariants",
+      "phase": "phase_4",
+      "status": "pending"
+    },
+    {
+      "id": "T016",
+      "title": "Run altitude discipline tests",
+      "phase": "phase_4",
+      "status": "pending"
+    },
+    {
+      "id": "T017",
+      "title": "Tag release A7.2-RepairPipeline-v1.0",
+      "phase": "phase_5",
+      "status": "pending"
+    },
+    {
+      "id": "T018",
+      "title": "Publish documentation",
+      "phase": "phase_5",
+      "status": "pending"
+    },
+    {
+      "id": "T019",
+      "title": "Archive artifacts",
+      "phase": "phase_5",
+      "status": "pending"
+    }
+  ]
+}
