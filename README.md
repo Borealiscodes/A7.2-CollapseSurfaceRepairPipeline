@@ -1,334 +1,101 @@
-# 🌈 README.md — A7.2 Collapse‑Surface Repair Pipeline
-Accessible Overview • Engineering Guide • Geometric Explanation • Full Altitude Model
+# 🟥🟧 A7.2 Collapse-Surface Repair Pipeline
+**Spectral Tear Detection, Non-Dual Projection, and Metric Tensor Stabilization**
+
+> **EPISTEMIC & METHODOLOGICAL DISCLOSURE:** This repository is a diagnostic systems-methods sandbox and mathematical repair prototype. It addresses the **metric degeneracy pathology** (\(\sigma_{\min} \to 0^+\)) that occurs when high-dimensional latent representations undergo aggressive quantization, out-of-order operator updates, or partial-deflate memory truncation. It does not claim autonomous semantic consciousness; it enforces linear-algebraic stability over warped coordinate spaces.
 
 ---
 
-🟥🟧🟨 1. What This Repo Is (User-Friendly Overview)
+## 1. The Structural Problem: Collapse Surfaces (Σ)
+In well-conditioned latent spaces (**Altitude A6 — Dual Algebra**), projection operators P are linear and idempotent:
 
-Modern AI models live in extremely high‑dimensional vector spaces — thousands, sometimes millions of dimensions.  
-In these spaces:
+\[P^2 = P, \qquad P(ax + by) = aP(x) + bP(y)\]
 
-- 🌀 distances behave strangely  
-- 🧩 adjacency fractures  
-- 🔥 curvature becomes unstable  
-- 🎛 spectral modes tear  
-- 🕳 geometry collapses  
+When a high-dimensional model encounters un-dithered quantization noise (E) or sheared memory buffers (such as partial stream salvage), adjacent coordinate vectors lose linear independence. The minimum singular value of the metric tensor collapses toward zero (\(\sigma_{\min}(A + E) \to 0^+\)), causing the L₂ condition number to diverge (κ₂ → ∞).
 
-When geometry breaks, the model becomes:
-
-- unpredictable  
-- non‑linear  
-- non‑interpretable  
-
-This repo provides the A7.2 Collapse‑Surface Repair Pipeline, a toolchain that:
-
-- detects broken geometry  
-- projects it onto a stable surface  
-- reintegrates it safely  
-- verifies the repair formally  
-
-It is the runtime paramedic for high‑dimensional AI.
+This rank deficiency fractures the manifold, forming a non-differentiable **Collapse Surface (Σ)** at **Altitude A7**. Standard linear projections fail across Σ because they divide by vanishing singular values, amplifying noise into infinite poles and silent token-looping hallucinations.
 
 ---
 
-🟦🟩🟪 2. Who This Repo Is For (Triangle Mutiny Style)
+## 2. The Altitude Map (A3–A7.2 Operational Scope)
 
-👤 Users (Intuitive Layer)  
-Understand why AI geometry breaks and how collapse‑surface repair works.
-
-🛠️ Engineers (Practical Layer)  
-Use the tools:
-
-- Python detectors  
-- Rust projection engines  
-- JSON/Protobuf serializers  
-- Lean verification  
-
-📐 Geometers (Formal Layer)  
-Study:
-
-- non‑dual algebra  
-- collapse surfaces  
-- spectral tear closure  
-- dual‑compatible lifts  
-- altitude‑structured invariants  
+| Altitude | Domain | Mathematical State | Pipeline Action |
+| :--- | :--- | :--- | :--- |
+| **A3–A4** | Euclidean & Spectral | Well-conditioned metric (κ₂ ≈ 1); smooth Laplace–Beltrami eigenbasis. | Baseline monitoring; no intervention required. |
+| **A6** | Dual Algebra | Unitary & idempotent operators (\(U^*U = I\), P² = P). | Target target state for post-repair reintegration. |
+| **A6.5** | Spectral Firewall | Condition number threshold boundary (κ₂ > 4.5 or \(\sigma_{\min} < 10^{-5}\)). | Triggers Layer 1 Spectral Tear alert. |
+| **A7** | Non-Dual Algebra | Rank-deficient tensor; non-vanishing holonomy drift (\(\oint_\gamma \mathbf{p} \cdot d\mathbf{q} \neq 0\)). | Active trajectory failure; halts standard linear inference. |
+| **A7.2** | **Collapse Repair** | **Non-idempotent projection (\(\Pi_{\mathrm{ND}}\)) & Tikhonov clamping (λ = 0.0015).** | **Stabilizes spectrum and serializes verified state.** |
 
 ---
 
-🗺️ 3. Full Altitude Map (A0–A9)
+## 3. Consolidated Toolchain Architecture
+To eliminate multi-language FFI overhead and floating-point drift, the A7.2 pipeline consolidates execution into a **Python + Julia** numerical core, backed by static **Lean 4** schema verification:
 
-| Altitude | Tile | Name | Meaning / Runtime Physics |
-|---------|------|------|---------------------------|
-| A0 | ⚫ | Null Geometry | Pre‑geometric tensors; untyped space. |
-| A1 | ⚪ | Primitive Geometry | Basic metric assumptions; raw adjacency. |
-| A2 | ⚫⚪ | Proto‑Euclidean | Weak linearity; partial metric stability. |
-| A3 | 🟩 | Euclidean Runtime Physics | Flat curvature; stable distances; linear operators. |
-| A4 | 🟦 | Spectral Geometry | Laplace–Beltrami operators; eigenbasis; drift decomposition. |
-| A5 | 🟪 | Modal Runtime Physics | Modal coordinates; phase‑energy; spectral modes. |
-| A6 | 🟨 | Dual Algebra Runtime | Dual operators; reversible projections; kernel preservation. |
-| A6.5 | 🟧 | Firewall | Boundary between dual and non‑dual geometry. |
-| A7 | 🟥 | Non‑Dual Algebra | Curvature asymmetry; holonomy failure; spectral collapse. |
-| A7.2 | 🟥🟧 | Collapse‑Surface Repair | Non‑dual projection; spectral tear closure; dual‑compatible lift. |
-| A8 | 🟪🟥 | Congruence Adapter | Real‑valued geometric signals → congruence space. |
-| A8C | 🟪🟫 | Complex Adapter | Complex bundles; CPTP‑lite normalization; imaginary‑axis firewall. |
-| A9 | 🟫✨ | Quantum Runtime | Full CPTP evolution; Kraus channels; Hilbert‑space geometry. |
+### 🔍 Layer 1 — Collapse-Surface Detector (`src/repair/collapse_pipeline.py`)
+* **Language:** Python (`NumPy` / `SciPy`)
+* **Function:** Ingests raw N × N metric tensors (default N = 80) and computes dynamic Singular Value Decompositions (SVD) to measure observed matrix rank and condition number (\(\kappa_2 = \sigma_{\max} / \sigma_{\min}\)).
+* **Trigger:** Flags `singular_collapse_detected = True` if rank(A) < N or \(\sigma_{\min} < 10^{-5}\).
 
-This repo sits at A7.2, the altitude where:
+### 🔧 Layer 2 — Non-Dual Projection & Spectral Clamp (`julia/src/NonDualProjector.jl`)
+* **Language:** Julia (`LinearAlgebra` / `StaticArrays`)
+* **Function:** Executes high-precision spectral tear closure without IEEE-754 accumulation drift.
+* **Mathematics:**
+  1. Applies a non-vanishing **Tikhonov Regularization Shift** (\(A_{\mathrm{reg}} = A + \lambda \cdot \mathrm{Id}_{80}\), with λ = 0.0015) to guarantee \(\sigma_{\min} \ge \lambda\) and eliminate division-by-zero poles.
+  2. Projects singular values through a norm-clamped **Hyperbolic Inverse-Exponential Contraction Kernel** (\(\Pi_{\mathrm{ND}}\)):
 
-- broken geometry is detected  
-- collapse surfaces form  
-- non‑dual projections reconcile discontinuities  
-- dual‑compatible lifts reintegrate structure  
+\[\Pi_{\mathrm{ND}}(A) = U \cdot \mathrm{diag}\!\left(\operatorname{atanh}\!\left(\mathrm{clip}(\sigma_i, \lambda, 1-\epsilon)\right)\right) \cdot V^T\]
 
----
+### 📦 Layer 3 — Provenance Serializer (`src/repair/collapse_pipeline.py`)
+* **Language:** Python (`JSON`)
+* **Function:** Exports the stabilized metric tensor alongside its spectral audit trace (`nominal_rank`, `observed_rank`, `condition_number`) into a deterministic JSON artifact (`collapse_verified.json`).
 
-🟦🟩🟪 4. The Toolchain (Four-Layer Architecture)
-
-🔍 Layer 1 — Collapse‑Surface Detector (Python / FEniCS / Dedalus)
-
-Detects:
-
-- curvature singularities  
-- spectral tears  
-- modal discontinuities  
-- holonomy fractures  
-
-Reinforcements included:
-
-- Spectral Drift Decomposition  
-- DEC Holonomy Loop
-
-Output: collapse_raw.json
+### 🧠 Layer 4 — Dual-Compatible Lift Verifier (`verification/A72_Lift_Invariants.lean`)
+* **Language:** Lean 4 (`Mathlib`)
+* **Function:** Statically verifies that the exported JSON metadata satisfies post-repair positive-definiteness bounds (\(\sigma_{\min} > 0\)) before the tensor is reintegrated into the A6 runtime loop.
 
 ---
 
-🔧 Layer 2 — Non‑Dual Projection Engine (Rust / WASM)
+## 4. Repository Structure
 
-Applies:
+<pre>
+  
+</pre>
+A7.2-CollapseSurfaceRepairPipeline/
+├── docs/
+│   └── altitude_mathematics.md     # Formal derivations of non-dual projection bounds
+├── julia/
+│   └── src/
+│       └── NonDualProjector.jl     # High-precision SVD & atanh contraction kernel
+├── src/
+│   └── repair/
+│       ├── __init__.py
+│       └── collapse_pipeline.py    # Layer 1 Detector & Layer 3 JSON Serializer
+├── tests/
+│   └── test_a72_pipeline.py        # Falsification harness (20D rank-collapse stress test)
+├── verification/
+│   └── A72_Lift_Invariants.lean    # Lean 4 post-repair boundary contract
+├── LICENSE                         # MIT License
+└── README.md                       # System specification
 
-- non‑idempotent projection  
-- spectral tear closure  
-- modal adjacency restoration  
-
-Reinforcement included:
-
-- Hyperbolic Inverse‑Exponential Map (atanh kernel)  
-  - norm‑clamped  
-  - contraction‑validated  
-  - altitude‑safe  
-
-Output: collapse_surface.json
-
----
-
-📦 Layer 3 — Collapse‑Surface Serializer (JSON / Protobuf)
-
-Encodes:
-
-- collapse surfaces  
-- spectral metadata  
-- adjacency metadata  
-- provenance metadata  
-
-Output: collapse_verified.json
+</pre>
 
 ---
 
-🧠 Layer 4 — Dual‑Compatible Lift Engine (Lean 4 / Mathlib)
+## 5. Verification & Falsification Testing
+To run the automated stress-test harness simulating a 20-dimensional partial-salvage manifold shear:
 
-Verifies:
+```bash
+pip install numpy pytest
+pytest tests/test_a72_pipeline.py
+```
 
-- continuity restoration  
-- adjacency restoration  
-- kernel reconstruction  
-- spectral stability  
-
-Output: Verified A6 reintegration structure.
-
----
-
-🟨🟧 5. Why AI Needs This Toolchain
-
-High‑dimensional AI systems behave like unstable manifolds under stress.  
-When drift or collapse occurs:
-
-- geometry breaks  
-- spectral modes tear  
-- adjacency fractures  
-- provenance collapses  
-
-Traditional interpretability tools cannot repair this.
-
-The A7.2 pipeline provides:
-
-- detection  
-- reconciliation  
-- serialization  
-- reintegration  
-- verification  
-
-It is the first end‑to‑end system designed specifically for geometric repair in AI.
+### Falsifiable Acceptance Criteria
+1. **Rank Collapse Detection:** A sheared $80 \times 80$ matrix with 20 zeroed dimensions must register `observed_rank == 60` and $\kappa_2 \ge 10^{11}$.
+2. **Pole Elimination:** Post-repair singular values must satisfy $\min(\sigma_{\mathrm{repaired}}) > 0.0$ strictly, proving that infinite poles at mechanical rest have been neutralized.
 
 ---
 
-🟩 6. Safety Statement
-
-This repository contains mathematical and computational tools for structural AI runtime physics and spectral geometry repair.  
-It does not contain or support any functionality related to physical systems, autonomous control, or weaponization.
-
----
-
-🟦 7. License
-
-MIT License.
-
----
-
-🟪 8. Maintainer
-
-Borealis S. Hedling  
-Dublin, Ireland  
-Altitude Model: A0–A7.2
-
----
-
-🧮 9. Mathematics Behind the Pipeline
-
-🟩 A3 — Euclidean Geometry
-
-\[
-d(p,q) = \|p - q\|
-\]
-
----
-
-🟦 A4 — Spectral Geometry
-
-\[
-\Delta f = -\mathrm{div}(\nabla f)
-\]
-
-\[
-\mathrm{Tr}(e^{-t\Delta}) \sim (4\pi t)^{-d/2} \sum{m=0}^{\infty} am t^m
-\]
-
----
-
-🟪 A5 — Modal Geometry
-
-\[
-x = \sumk ck \phi_k
-\]
-
----
-
-🟨 A6 — Dual Algebra
-
-\[
-U^\* U = I
-\]
-
-\[
-P^2 = P
-\]
-
----
-
-🟧 A6.5 — Firewall
-
-Prevents non‑dual leakage into dual algebra.
-
----
-
-🟥 A7 — Non‑Dual Algebra
-
-\[
-U_i^\* \text{ need not exist}
-\]
-
-\[
-K{A7}(p) = Ui Uj - Uj U_i
-\]
-
-\[
-H_U = U^{-1} V U W^{-1}
-\]
-
----
-
-🟥🟧 A7.2 — Collapse‑Surface Repair
-
-Non‑dual projection:
-
-\[
-\Pi_{\mathrm{ND}} : M \to \Sigma
-\]
-
-Not idempotent:
-
-\[
-\Pi{\mathrm{ND}}^2 \ne \Pi{\mathrm{ND}}
-\]
-
-Not linear:
-
-\[
-\Pi{\mathrm{ND}}(a p + b q) \ne a\Pi{\mathrm{ND}}(p) + b\Pi_{\mathrm{ND}}(q)
-\]
-
-Reintegration:
-
-\[
-\iota : \Sigma \to M
-\]
-
-Restores:
-
-- continuity  
-- adjacency  
-- kernel invariants  
-- spectral stability  
-
----
-
-🧠 Why AI Needs This Math
-
-High‑dimensional AI systems behave like:
-
-- curved manifolds under stress  
-- spectral systems under drift  
-- modal systems under collapse  
-- non‑dual systems under perturbation  
-
-When geometry breaks, the model loses:
-
-- interpretability  
-- stability  
-- consistency  
-- provenance  
-
-A7.2 repairs these failures using:
-
-- spectral geometry  
-- non‑dual algebra  
-- collapse surfaces  
-- dual‑compatible lifts  
-
----
-
-📜 Provenance Footer — README.md
-
-Document: README — A7.2 Collapse‑Surface Repair Pipeline  
-Altitude: 🟥🟧 A7.2 — Non‑Dual Geometry Reconciliation Layer  
-Author: Borealis S. Hedling  
-Location: Dublin, Ireland  
-Date: 18 October 2026  
-Version: v7.2  
-Stack: A0 → A7.2 (Structural AI Runtime Physics)  
-Surfaces: Collapse‑Surface Projection • Dual-Compatible Reintegration  
-Toolchain: Python (Detector) • Rust (Projection) • JSON/Protobuf (Serializer) • Lean 4 (Lift Engine)  
-Integrity: Drift‑Neutral • Altitude‑Safe • Non‑Dual Isolated • Dual‑Compatible Verified  
-Status: Complete • Sealed • Repository‑Ready
-
----
-
+## 6. Safety & Licensing
+* **Scope:** This repository provides linear-algebraic and spectral-geometry diagnostic tools for AI runtime stability. It contains no autonomous kinetic control, surveillance, or dual-use targeting logic.
+* **License:** MIT License.
+* **Maintainer:** Borealis S. Hedling (Dublin, Ireland).
